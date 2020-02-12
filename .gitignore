@@ -1,0 +1,21 @@
+node_modules/
+!scripts/docs/
+.eslintcache
+npm-debug.log
+yarn-error.log
+.DS_Store
+.env
+
+# Bundle build files
+/dist
+/cjs
+/es
+
+# Generated files
+/docs
+/website/examples
+/website/stories
+/storybook/dist/*
+
+# Argos CI screenshots
+/functional-tests/screenshots/

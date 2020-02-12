@@ -1,0 +1,5 @@
+/dist
+/cjs
+/es
+/website
+node_modules/
