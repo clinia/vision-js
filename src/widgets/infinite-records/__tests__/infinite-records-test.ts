@@ -1,0 +1,178 @@
+import { render as preactRender } from 'preact';
+import searchHelper from '@clinia/search-helper';
+import { Client } from '../../../types';
+import infiniteRecords from '../infinite-records';
+import { castToJestMock } from '../../../../test/utils/castToJestMock';
+
+const render = castToJestMock(preactRender);
+
+jest.mock('preact', () => {
+  const module = require.requireActual('preact');
+
+  module.render = jest.fn();
+
+  return module;
+});
+
+describe('Usage', () => {
+  it('throws without container', () => {
+    expect(() => {
+      // @ts-ignore: test infiniteRecords with invalid parameters
+      infiniteRecords({ container: undefined });
+    }).toThrowErrorMatchingSnapshot();
+  });
+});
+
+describe('infiniteRecords()', () => {
+  let container;
+  let widget;
+  let results;
+  let helper;
+
+  beforeEach(() => {
+    render.mockClear();
+
+    helper = searchHelper({} as Client, '', {});
+    helper.search = jest.fn();
+
+    container = document.createElement('div');
+    widget = infiniteRecords({
+      container,
+      escapeHTML: true,
+      transformItems: items => items,
+      cssClasses: { root: ['root', 'cx'] },
+      showPrevious: false,
+    });
+    widget.init({ helper, visionInstance: {} });
+    results = {
+      records: [{ first: 'hit', second: 'hit' }],
+      perPage: 2,
+      page: 1,
+    };
+  });
+
+  it('calls twice render(<Records props />, container)', () => {
+    const state = { page: 0 };
+
+    widget.render({ results, state });
+    widget.render({ results, state });
+
+    const [firstRender, secondRender] = render.mock.calls;
+
+    expect(render).toHaveBeenCalledTimes(2);
+    expect(firstRender[0].props).toMatchSnapshot();
+    expect(firstRender[1]).toEqual(container);
+    expect(secondRender[0].props).toMatchSnapshot();
+    expect(secondRender[1]).toEqual(container);
+  });
+
+  it('renders transformed items', () => {
+    const state = { page: 0 };
+
+    widget = infiniteRecords({
+      container,
+      escapeHTML: true,
+      transformItems: items =>
+        items.map(item => ({ ...item, transformed: true })),
+      showPrevious: false,
+    });
+
+    widget.init({ helper, visionInstance: {} });
+
+    widget.render({
+      results,
+      state,
+      visionInstance: {},
+    });
+
+    const [firstRender] = render.mock.calls;
+
+    expect(firstRender[0].props).toMatchSnapshot();
+  });
+
+  it('if it is the last page, then the props should contain isLastPage true', () => {
+    const state = { page: 0 };
+    widget.render({
+      results: { ...results, page: 0, numPages: 2 },
+      state,
+    });
+    widget.render({
+      results: { ...results, page: 1, numPages: 2 },
+      state,
+    });
+
+    const [firstRender, secondRender] = render.mock.calls;
+
+    expect(render).toHaveBeenCalledTimes(2);
+    expect(firstRender[0].props).toMatchSnapshot();
+    expect(firstRender[1]).toEqual(container);
+    expect(secondRender[0].props).toMatchSnapshot();
+    expect(secondRender[1]).toEqual(container);
+  });
+
+  it('updates the search state properly when showMore is called', () => {
+    expect(helper.state.page).toBeUndefined();
+
+    const state = { page: 0 };
+
+    widget.render({ results, state });
+
+    const [firstRender] = render.mock.calls;
+
+    const { showMore } = firstRender[0].props;
+
+    showMore();
+
+    expect(helper.state.page).toBe(1);
+    expect(helper.search).toHaveBeenCalledTimes(1);
+  });
+
+  it('should add __position key with absolute position', () => {
+    results = { ...results, page: 4, perPage: 10 };
+    const state = { page: results.page };
+
+    widget.render({ results, state });
+
+    expect(results.records[0].__position).toEqual(41);
+  });
+
+  it('if it is the first page, then the props should contain isFirstPage true', () => {
+    const state = { page: 0 };
+
+    widget.render({
+      results: { ...results, page: 0, numPages: 2 },
+      state,
+    });
+    widget.render({
+      results: { ...results, page: 1, numPages: 2 },
+      state,
+    });
+
+    expect(render).toHaveBeenCalledTimes(2);
+
+    const [firstRender, secondRender] = render.mock.calls;
+
+    expect(firstRender[0].props.isFirstPage).toEqual(true);
+    expect(firstRender[1]).toEqual(container);
+
+    expect(secondRender[0].props.isFirstPage).toEqual(true);
+    expect(secondRender[1]).toEqual(container);
+  });
+
+  it('if it is not the first page, then the props should contain isFirstPage false', () => {
+    helper.setPage(1);
+    widget.init({ helper, visionInstance: {} });
+
+    const state = { page: 1 };
+    widget.render({
+      results: { ...results, page: 1, numPages: 2 },
+      state,
+    });
+
+    const [firstRender] = render.mock.calls;
+
+    expect(render).toHaveBeenCalledTimes(1);
+    expect(firstRender[0].props.isFirstPage).toEqual(false);
+    expect(firstRender[1]).toEqual(container);
+  });
+});

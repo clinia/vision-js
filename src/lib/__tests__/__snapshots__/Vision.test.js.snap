@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Usage throws if a widget without render or init method is added 1`] = `
+"The widget definition expects a \`render\` and/or an \`init\` method.
+
+See documentation: https://www.clinia.com/doc/api-reference/widgets/vision/js/"
+`;
+
+exports[`Usage throws if addWidgets is called with a single widget 1`] = `
+"The \`addWidgets\` method expects an array of widgets.
+
+See documentation: https://www.clinia.com/doc/api-reference/widgets/vision/js/"
+`;
+
+exports[`Usage throws if insightsClient is not a function 1`] = `
+"The \`insightsClient\` option should be a function.
+
+See documentation: https://www.clinia.com/doc/api-reference/widgets/vision/js/"
+`;
+
+exports[`Usage throws without indexName 1`] = `
+"The \`indexName\` option is required.
+
+See documentation: https://www.clinia.com/doc/api-reference/widgets/vision/js/"
+`;
+
+exports[`Usage throws without searchClient 1`] = `
+"The \`searchClient\` option is required.
+
+See documentation: https://www.clinia.com/doc/api-reference/widgets/vision/js/"
+`;

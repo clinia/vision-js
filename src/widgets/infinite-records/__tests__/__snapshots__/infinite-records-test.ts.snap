@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Usage throws without container 1`] = `
+"The \`container\` option is required.
+
+See documentation: https://www.clinia.com/doc/api-reference/widgets/infinite-records/js/"
+`;

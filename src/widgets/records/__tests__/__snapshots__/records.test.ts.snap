@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Usage throws without container 1`] = `
+"The \`container\` option is required.
+
+See documentation: https://www.clinia.com/doc/api-reference/widgets/records/js/"
+`;
+
+exports[`records() calls twice render(<Records props />, container) 1`] = `
+Object {
+  "cssClasses": Object {
+    "emptyRoot": "cvi-Records--empty",
+    "item": "cvi-Records-item",
+    "list": "cvi-Records-list",
+    "root": "cvi-Records root cx",
+  },
+  "insights": undefined,
+  "records": Array [
+    Object {
+      "__position": 9,
+      "first": "hit",
+      "second": "hit",
+    },
+  ],
+  "results": Object {
+    "page": 2,
+    "perPage": 4,
+    "records": Array [
+      Object {
+        "__position": 9,
+        "first": "hit",
+        "second": "hit",
+      },
+    ],
+  },
+  "templateProps": Object {
+    "templates": Object {
+      "empty": "No results",
+      "item": [Function],
+    },
+    "templatesConfig": undefined,
+    "useCustomCompileOptions": Object {
+      "empty": false,
+      "item": false,
+    },
+  },
+}
+`;
+
+exports[`records() calls twice render(<Records props />, container) 2`] = `
+Object {
+  "cssClasses": Object {
+    "emptyRoot": "cvi-Records--empty",
+    "item": "cvi-Records-item",
+    "list": "cvi-Records-list",
+    "root": "cvi-Records root cx",
+  },
+  "insights": undefined,
+  "records": Array [
+    Object {
+      "__position": 9,
+      "first": "hit",
+      "second": "hit",
+    },
+  ],
+  "results": Object {
+    "page": 2,
+    "perPage": 4,
+    "records": Array [
+      Object {
+        "__position": 9,
+        "first": "hit",
+        "second": "hit",
+      },
+    ],
+  },
+  "templateProps": Object {
+    "templates": Object {
+      "empty": "No results",
+      "item": [Function],
+    },
+    "templatesConfig": undefined,
+    "useCustomCompileOptions": Object {
+      "empty": false,
+      "item": false,
+    },
+  },
+}
+`;
+
+exports[`records() renders transformed items 1`] = `
+Object {
+  "cssClasses": Object {
+    "emptyRoot": "cvi-Records--empty",
+    "item": "cvi-Records-item",
+    "list": "cvi-Records-list",
+    "root": "cvi-Records",
+  },
+  "insights": undefined,
+  "records": Array [
+    Object {
+      "__position": 9,
+      "first": "hit",
+      "second": "hit",
+      "transformed": true,
+    },
+  ],
+  "results": Object {
+    "page": 2,
+    "perPage": 4,
+    "records": Array [
+      Object {
+        "__position": 9,
+        "first": "hit",
+        "second": "hit",
+        "transformed": true,
+      },
+    ],
+  },
+  "templateProps": Object {
+    "templates": Object {
+      "empty": "No results",
+      "item": [Function],
+    },
+    "templatesConfig": undefined,
+    "useCustomCompileOptions": Object {
+      "empty": false,
+      "item": false,
+    },
+  },
+}
+`;

@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InfiniteRecrods markup should render <InfiniteRecords /> on first page 1`] = `
+<div>
+  <div
+    class="root"
+  >
+    <ol
+      class="list"
+    >
+      <li
+        class="item"
+      >
+        item
+      </li>
+      <li
+        class="item"
+      >
+        item
+      </li>
+    </ol>
+    <button
+      class="loadMore"
+    >
+      showMoreText
+    </button>
+  </div>
+</div>
+`;
+
+exports[`InfiniteRecrods markup should render <InfiniteRecords /> on last page 1`] = `
+<div>
+  <div
+    class="root"
+  >
+    <ol
+      class="list"
+    >
+      <li
+        class="item"
+      >
+        item
+      </li>
+      <li
+        class="item"
+      >
+        item
+      </li>
+    </ol>
+    <button
+      class="loadMore disabledLoadMore"
+      disabled=""
+    >
+      showMoreText
+    </button>
+  </div>
+</div>
+`;
+
+exports[`InfiniteRecrods markup should render <InfiniteRecords /> with "Show previous" button on first page 1`] = `
+<div>
+  <div
+    class="root"
+  >
+    <button
+      class="loadPrevious disabledLoadPrevious"
+      disabled=""
+    >
+      showPreviousText
+    </button>
+    <ol
+      class="list"
+    >
+      <li
+        class="item"
+      >
+        item
+      </li>
+      <li
+        class="item"
+      >
+        item
+      </li>
+    </ol>
+    <button
+      class="loadMore"
+    >
+      showMoreText
+    </button>
+  </div>
+</div>
+`;
+
+exports[`InfiniteRecrods markup should render <InfiniteRecords /> with "Show previous" button on last page 1`] = `
+<div>
+  <div
+    class="root"
+  >
+    <button
+      class="loadPrevious"
+    >
+      showPreviousText
+    </button>
+    <ol
+      class="list"
+    >
+      <li
+        class="item"
+      >
+        item
+      </li>
+      <li
+        class="item"
+      >
+        item
+      </li>
+    </ol>
+    <button
+      class="loadMore disabledLoadMore"
+      disabled=""
+    >
+      showMoreText
+    </button>
+  </div>
+</div>
+`;
+
+exports[`InfiniteRecrods markup should render <InfiniteRecords /> without records on first page 1`] = `
+<div>
+  <div
+    class="root emptyRoot"
+  >
+    empty
+  </div>
+</div>
+`;
+
+exports[`InfiniteRecrods markup should render <InfiniteRecords /> without records on last page 1`] = `
+<div>
+  <div
+    class="root emptyRoot"
+  >
+    empty
+  </div>
+</div>
+`;

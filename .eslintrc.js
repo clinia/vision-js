@@ -3,6 +3,7 @@ module.exports = {
   plugins: ['react-hooks'],
   rules: {
     'no-param-reassign': 0,
+    'import/extensions': 0,
     'import/no-extraneous-dependencies': 0,
     'new-cap': [
       'error',
@@ -24,19 +25,25 @@ module.exports = {
       'error',
       { argsIgnorePattern: '^_', ignoreRestSiblings: true },
     ],
+    "@typescript-eslint/explicit-member-accessibility": 0,
     '@typescript-eslint/camelcase': [
       'error',
       {
         allow: [
-          'instant_search',
-          'instant_search_movies',
-          'free_shipping',
+          'health_facility',
           '^EXPERIMENTAL_',
         ],
       },
     ],
   },
   overrides: [
+    {
+      // enable the rule specifically for TypeScript files
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "@typescript-eslint/explicit-member-accessibility": ["error"]
+      }
+    },
     {
       files: ['*.ts', '*.tsx'],
       rules: {

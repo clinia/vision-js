@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`withInsights when applied on connectRecords should expose the insights client wrapper that throws when insightsClient was not provided 1`] = `
+"The \`insightsClient\` option has not been provided to \`vision\`.
+
+See documentation: https://www.clinia.com/doc/api-reference/widgets/vision/js/"
+`;
