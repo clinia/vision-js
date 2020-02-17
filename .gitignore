@@ -19,3 +19,5 @@ yarn-error.log
 
 # Argos CI screenshots
 /functional-tests/screenshots/
+
+.vscode
