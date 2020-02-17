@@ -32,7 +32,7 @@ describe('simpleStateMapping', () => {
             color: ['red'],
           },
           configure: {
-            advancedSyntax: false,
+            queryType: 'prefix_none',
           },
         },
       });
@@ -103,7 +103,7 @@ describe('simpleStateMapping', () => {
             color: ['red'],
           },
           configure: {
-            advancedSyntax: false,
+            queryType: 'prefix_none',
           },
         },
       });

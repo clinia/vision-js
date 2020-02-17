@@ -39,9 +39,7 @@ export const createVision = (args: Partial<Vision> = {}): Vision => {
     _createURL: jest.fn(() => '#'),
     onStateChange: jest.fn(),
     createURL: jest.fn(() => '#'),
-    addWidget: jest.fn(),
     addWidgets: jest.fn(),
-    removeWidget: jest.fn(),
     removeWidgets: jest.fn(),
     EXPERIMENTAL_use: jest.fn(),
     // methods from EventEmitter

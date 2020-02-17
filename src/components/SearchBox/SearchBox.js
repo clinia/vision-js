@@ -18,7 +18,7 @@ const SearchBoxCSSClasses = PropTypes.shape({
 });
 
 class SearchBox extends Component {
-  public static propTypes = {
+  static propTypes = {
     placeholder: PropTypes.string.isRequired,
     cssClasses: SearchBoxCSSClasses.isRequired,
     templates: PropTypes.object.isRequired,
@@ -36,7 +36,7 @@ class SearchBox extends Component {
     onReset: PropTypes.func,
   };
 
-  public static defaultProps = {
+  static defaultProps = {
     query: '',
     showSubmit: true,
     showReset: true,
@@ -51,7 +51,7 @@ class SearchBox extends Component {
     refine: noop,
   };
 
-  public state = {
+  state = {
     query: this.props.query,
     focused: false,
   };
@@ -63,11 +63,11 @@ class SearchBox extends Component {
    * @see RefinementList#componentWillReceiveProps
    * @return {undefined}
    */
-  public resetInput() {
+  resetInput() {
     this.setState({ query: '' });
   }
 
-  private onInput = event => {
+  onInput = event => {
     const { searchAsYouType, refine, onChange } = this.props;
     const query = event.target.value;
 
@@ -79,7 +79,7 @@ class SearchBox extends Component {
     onChange(event);
   };
 
-  public componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps) {
     /**
      * when the user is typing, we don't want to replace the query typed
      * by the user (state.query) with the query exposed by the connector (props.query)
@@ -89,7 +89,7 @@ class SearchBox extends Component {
     }
   }
 
-  private onSubmit = event => {
+  onSubmit = event => {
     const { searchAsYouType, refine, onSubmit } = this.props;
 
     event.preventDefault();
@@ -105,7 +105,7 @@ class SearchBox extends Component {
     return false;
   };
 
-  private onReset = event => {
+  onReset = event => {
     const { refine, onReset } = this.props;
     const query = '';
 
@@ -117,15 +117,15 @@ class SearchBox extends Component {
     onReset(event);
   };
 
-  private onBlur = () => {
+  onBlur = () => {
     this.setState({ focused: false });
   };
 
-  private onFocus = () => {
+  onFocus = () => {
     this.setState({ focused: true });
   };
 
-  public render() {
+  render() {
     const {
       cssClasses,
       placeholder,

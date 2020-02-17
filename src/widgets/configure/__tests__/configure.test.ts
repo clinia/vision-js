@@ -23,7 +23,7 @@ describe('configure', () => {
   test('does not throw with search parameters', () => {
     const trigger = () => {
       configure({
-        analytics: true,
+        perPage: 20,
       });
     };
 

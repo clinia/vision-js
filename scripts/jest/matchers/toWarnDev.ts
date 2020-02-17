@@ -18,6 +18,7 @@ declare global {
 }
 
 const matcher: jest.ExpectExtendMap = {
+  // @ts-ignore
   toWarnDev: (callback: () => void, expectedMessage: string) => {
     if (expectedMessage !== undefined && typeof expectedMessage !== 'string') {
       throw new Error(

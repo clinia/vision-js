@@ -26,7 +26,7 @@ export type Refinement =
   | FacetExcludeRefinement;
 
 function getRefinement(
-  state: SearchParameters,
+  _state: SearchParameters,
   type: Refinement['type'],
   property: Refinement['property'],
   name: Refinement['name'],

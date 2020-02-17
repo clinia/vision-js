@@ -71,7 +71,7 @@ describe('connectConfigure', () => {
     const makeWidget = connectConfigure();
     const widget = makeWidget({
       searchParameters: {
-        analytics: true,
+        perPage: 20,
       },
     });
 
@@ -81,7 +81,7 @@ describe('connectConfigure', () => {
       })
     ).toEqual(
       new SearchParameters({
-        analytics: true,
+        perPage: 20,
       })
     );
   });
@@ -90,35 +90,35 @@ describe('connectConfigure', () => {
     const makeWidget = connectConfigure();
     const widget = makeWidget({
       searchParameters: {
-        analytics: true,
+        perPage: 20,
       },
     });
 
     expect(
       widget.getWidgetSearchParameters!(
         new SearchParameters({
-          analytics: false,
+          perPage: 20,
         }),
-        { uiState: { configure: { analytics: true } } }
+        { uiState: { configure: { perPage: 20 } } }
       )
     ).toEqual(
       new SearchParameters({
-        analytics: true,
+        perPage: 20,
       })
     );
 
     expect(
       widget.getWidgetSearchParameters!(
         new SearchParameters({
-          analytics: false,
-          clickAnalytics: true,
+          perPage: 20,
+          queryType: 'prefix_last',
         }),
-        { uiState: { configure: { analytics: true } } }
+        { uiState: { configure: { perPage: 20 } } }
       )
     ).toEqual(
       new SearchParameters({
-        analytics: true,
-        clickAnalytics: true,
+        perPage: 20,
+        queryType: 'prefix_last',
       })
     );
   });
@@ -128,7 +128,7 @@ describe('connectConfigure', () => {
     const makeWidget = connectConfigure(renderFn, jest.fn());
     const widget = makeWidget({
       searchParameters: {
-        analytics: true,
+        perPage: 20,
       },
     });
 
@@ -139,23 +139,23 @@ describe('connectConfigure', () => {
           // so it shouldn't be overridden when calling `refine`.
           facets: ['brand'],
         }),
-        { uiState: { configure: { analytics: true } } }
+        { uiState: { configure: { perPage: 20 } } }
       )
     );
     widget.init!(createInitOptions({ helper }));
 
     expect(
       widget.getWidgetSearchParameters!(new SearchParameters({}), {
-        uiState: { configure: { analytics: true } },
+        uiState: { configure: { perPage: 20 } },
       })
     ).toEqual(
       new SearchParameters({
-        analytics: true,
+        perPage: 20,
       })
     );
     expect(helper.state).toEqual(
       new SearchParameters({
-        analytics: true,
+        perPage: 20,
         facets: ['brand'],
       })
     );
@@ -186,33 +186,33 @@ describe('connectConfigure', () => {
     const makeWidget = connectConfigure();
     const widget = makeWidget({
       searchParameters: {
-        analytics: true,
+        perPage: 20,
       },
     });
 
     helper.setState(
       widget.getWidgetSearchParameters!(
         new SearchParameters({
-          clickAnalytics: true,
+          queryType: 'prefix_last',
         }),
-        { uiState: { configure: { analytics: true } } }
+        { uiState: { configure: { perPage: 20 } } }
       )
     );
     widget.init!(createInitOptions({ helper }));
 
     expect(
       widget.getWidgetSearchParameters!(new SearchParameters({}), {
-        uiState: { configure: { analytics: true } },
+        uiState: { configure: { perPage: 20 } },
       })
     ).toEqual(
       new SearchParameters({
-        analytics: true,
+        perPage: 20,
       })
     );
     expect(helper.state).toEqual(
       new SearchParameters({
-        analytics: true,
-        clickAnalytics: true,
+        perPage: 20,
+        queryType: 'prefix_last',
       })
     );
 
@@ -222,7 +222,7 @@ describe('connectConfigure', () => {
 
     expect(nextState).toEqual(
       new SearchParameters({
-        clickAnalytics: true,
+        queryType: 'prefix_last',
       })
     );
   });
@@ -232,14 +232,14 @@ describe('connectConfigure', () => {
       const makeWidget = connectConfigure();
       const widget = makeWidget({
         searchParameters: {
-          analytics: true,
+          perPage: 20,
         },
       });
 
       expect(
         widget.getWidgetState!({}, { helper, searchParameters: helper.state })
       ).toEqual({
-        configure: { analytics: true },
+        configure: { perPage: 20 },
       });
     });
 
@@ -248,7 +248,7 @@ describe('connectConfigure', () => {
       const makeWidget = connectConfigure(renderFn);
       const widget = makeWidget({
         searchParameters: {
-          analytics: true,
+          perPage: 20,
         },
       });
 
@@ -269,7 +269,7 @@ describe('connectConfigure', () => {
       const makeWidget = connectConfigure(renderFn);
       const widget = makeWidget({
         searchParameters: {
-          analytics: true,
+          perPage: 20,
         },
       });
 
@@ -289,7 +289,7 @@ describe('connectConfigure', () => {
       const makeWidget = connectConfigure();
       const widget = makeWidget({
         searchParameters: {
-          analytics: true,
+          perPage: 20,
         },
       });
 
@@ -299,7 +299,7 @@ describe('connectConfigure', () => {
           { helper, searchParameters: helper.state }
         )
       ).toEqual({
-        configure: { analytics: true, queryType: 'prefix_last' },
+        configure: { perPage: 20, queryType: 'prefix_last' },
       });
     });
 
@@ -307,17 +307,17 @@ describe('connectConfigure', () => {
       const makeWidget = connectConfigure();
       const widget = makeWidget({
         searchParameters: {
-          analytics: true,
+          perPage: 20,
         },
       });
 
       expect(
         widget.getWidgetState!(
-          { configure: { analytics: false } },
+          { configure: { perPage: 20 } },
           { helper, searchParameters: helper.state }
         )
       ).toEqual({
-        configure: { analytics: true },
+        configure: { perPage: 20 },
       });
     });
   });
@@ -327,7 +327,7 @@ describe('connectConfigure', () => {
       const makeWidget = connectConfigure();
       const widget = makeWidget({
         searchParameters: {
-          analytics: true,
+          perPage: 20,
         },
       });
 
@@ -335,7 +335,7 @@ describe('connectConfigure', () => {
         uiState: {},
       });
 
-      expect(sp).toEqual(new SearchParameters({ analytics: true }));
+      expect(sp).toEqual(new SearchParameters({ perPage: 20 }));
     });
 
     it('returns parameters set by uiState', () => {
@@ -345,53 +345,53 @@ describe('connectConfigure', () => {
       const sp = widget.getWidgetSearchParameters!(new SearchParameters(), {
         uiState: {
           configure: {
-            analytics: false,
+            perPage: 20,
           },
         },
       });
 
-      expect(sp).toEqual(new SearchParameters({ analytics: false }));
+      expect(sp).toEqual(new SearchParameters({ perPage: 20 }));
     });
 
     it('overrides parameters set by uiState', () => {
       const makeWidget = connectConfigure();
       const widget = makeWidget({
         searchParameters: {
-          analytics: true,
+          perPage: 20,
         },
       });
 
       const sp = widget.getWidgetSearchParameters!(new SearchParameters(), {
         uiState: {
           configure: {
-            analytics: false,
+            perPage: 20,
           },
         },
       });
 
-      expect(sp).toEqual(new SearchParameters({ analytics: true }));
+      expect(sp).toEqual(new SearchParameters({ perPage: 20 }));
     });
 
     it('merges parameters set by uiState', () => {
       const makeWidget = connectConfigure();
       const widget = makeWidget({
         searchParameters: {
-          analyticsTags: ['best-website-in-the-world'],
+          queryType: 'prefix_last',
         },
       });
 
       const sp = widget.getWidgetSearchParameters!(new SearchParameters(), {
         uiState: {
           configure: {
-            analytics: false,
+            perPage: 20,
           },
         },
       });
 
       expect(sp).toEqual(
         new SearchParameters({
-          analytics: false,
-          analyticsTags: ['best-website-in-the-world'],
+          perPage: 20,
+          queryType: 'prefix_last',
         })
       );
     });
@@ -435,14 +435,14 @@ describe('connectConfigure', () => {
       const makeWidget = connectConfigure(renderFn);
       const widget = makeWidget({
         searchParameters: {
-          analyticsTags: ['best-website-in-the-world'],
+          queryType: 'prefix_last',
         },
       });
 
       widget.init!(createInitOptions({ helper }));
       const { refine } = renderFn.mock.calls[0][0];
 
-      refine({ analyticsTags: ['worst-site-now'] });
+      refine({ queryType: 'prefix_none' });
 
       const sp = widget.getWidgetSearchParameters!(new SearchParameters(), {
         uiState: {},
@@ -450,7 +450,7 @@ describe('connectConfigure', () => {
 
       expect(sp).toEqual(
         new SearchParameters({
-          analyticsTags: ['worst-site-now'],
+          queryType: 'prefix_none',
         })
       );
     });

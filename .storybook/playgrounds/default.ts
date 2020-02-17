@@ -10,7 +10,6 @@ export const recordsItemTemplate = `
 
 function visionPlayground({
   search,
-  leftPanel,
   rightPanel,
 }: {
   search: any;

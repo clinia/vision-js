@@ -30,7 +30,7 @@ describe('singleIndexStateMapping', () => {
             color: ['red'],
           },
           configure: {
-            advancedSyntax: false,
+            queryType: 'prefix_none',
           },
         },
       });
@@ -141,7 +141,7 @@ describe('singleIndexStateMapping', () => {
           color: ['red'],
         },
         configure: {
-          advancedSyntax: false,
+          queryType: 'prefix_none',
         },
       });
 
