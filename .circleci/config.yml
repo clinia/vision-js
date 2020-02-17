@@ -114,6 +114,6 @@ workflows:
       - build and size
       - unit tests
       - lint
-      - type check js (optional)
+      # - type check js (optional)
       # - e2e tests
       # - release if needed
