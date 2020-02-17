@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#e2a400" />
+
+    <base href="/examples/with-routing/" />
+
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="shortcut icon" href="./favicon.png" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Hind:400,600|Open+Sans:300,400,700&display=swap"
+    />
+    <link rel="stylesheet" href="./src/theme.css" />
+    <link rel="stylesheet" href="./src/app.css" />
+    <link rel="stylesheet" href="./src/app.mobile.css" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default%2CArray.prototype.find%2CArray.prototype.includes%2CPromise%2CObject.assign%2CObject.entries"></script>
+    <title>Pharmacies demo | Clinia</title>
+  </head>
+
+  <body>
+    <header>
+      <div data-widget="searchbox"></div>
+    </header>
+
+    <main class="container">
+      <section class="container-results">
+
+        <div data-widget="records"></div>
+        <div class="records-empty-state">
+          <div
+            data-widget="clear-filters-empty-state"
+            class="records-empty-results"
+          ></div>
+        </div>
+
+        <footer class="container-footer">
+          <nav data-widget="pagination"></nav>
+        </footer>
+      </section>
+    </main>
+
+    <script src="./src/app.ts"></script>
+  </body>
+</html>

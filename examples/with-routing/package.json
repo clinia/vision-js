@@ -1,0 +1,27 @@
+{
+  "name": "vision-with-routing",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "parcel index.html --port 3000",
+    "build": "parcel build index.html --public-url .",
+    "lint": "eslint --ext .js,.ts,.tsx ."
+  },
+  "dependencies": {
+    "clinia": "2.0.0-beta.1",
+    "@clinia/vision": "1.0.0-beta.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "10.0.3",
+    "eslint": "6.8.0",
+    "eslint-config-clinia": "2.0.0",
+    "eslint-config-prettier": "6.9.0",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-prettier": "3.1.2",
+    "parcel-bundler": "1.12.4",
+    "prettier": "1.19.1"
+  },
+  "alias": {
+    "@clinia/vision": "../../"
+  }
+}
