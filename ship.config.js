@@ -18,7 +18,7 @@ module.exports = {
     );
   },
   beforeCommitChanges: ({ exec }) => {
-    exec('yarn doctoc');
+    // exec('yarn doctoc');
   },
   pullRequestTeamReviewer: ['vision-for-websites'],
   buildCommand: ({ version }) =>
