@@ -27,3 +27,5 @@ function updateChangelog(shell) {
 function getChangelog(shell) {
   return shell.exec(baseConvChangelog, { silent: true }).stdout.trim();
 }
+
+/* eslint-enable import/no-commonjs */

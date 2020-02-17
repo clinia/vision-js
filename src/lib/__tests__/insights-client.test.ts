@@ -235,9 +235,7 @@ describe('withInsights', () => {
           ids: ['xxxxxx'],
           eventName: 'Add to basket',
         });
-      }).toThrowErrorMatchingInlineSnapshot(
-        `"Could not find id \\"xxxxxx\\" passed to \`clickedIdsAfterSearch\` in the returned records. This is necessary to infer the absolute position and the query id."`
-      );
+      }).toThrowErrorMatchingSnapshot();
     });
 
     it('should reject if ids provided have different queryIDs', () => {
@@ -258,9 +256,7 @@ describe('withInsights', () => {
           ids: ['1', '2'],
           eventName: 'Add to basket',
         });
-      }).toThrowErrorMatchingInlineSnapshot(
-        `"Insights currently allows a single \`queryID\`. The \`IDs\` provided map to multiple \`queryID\`s."`
-      );
+      }).toThrowErrorMatchingSnapshot();
     });
 
     it('should reject if no queryID found (clickAnalytics was not set to true)', () => {
@@ -281,9 +277,7 @@ describe('withInsights', () => {
           ids: ['1', '2'],
           eventName: 'Add to basket',
         });
-      }).toThrowErrorMatchingInlineSnapshot(
-        `"Could not infer \`queryID\`. Ensure Vision \`clickAnalytics: true\` was added with the Configure widget."`
-      );
+      }).toThrowErrorMatchingSnapshot();
     });
 
     it('should reject unknown method name', () => {
@@ -306,9 +300,7 @@ describe('withInsights', () => {
           ids: ['3'],
           eventName: 'Add to basket',
         });
-      }).toThrowErrorMatchingInlineSnapshot(
-        `"Unsupported method passed to insights: \\"unknow_method\\"."`
-      );
+      }).toThrowErrorMatchingSnapshot();
     });
   });
 });

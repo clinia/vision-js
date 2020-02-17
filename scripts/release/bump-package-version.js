@@ -40,3 +40,5 @@ fs.writeFileSync(versionFile, newContent);
 console.log('..Updating package.json, npm-shrinwrap.json');
 
 mversion.update(newVersion);
+
+/* eslint-enable no-console, import/no-commonjs */

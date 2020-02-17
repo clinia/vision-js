@@ -113,9 +113,7 @@ describe('defer', () => {
     const fn = jest.fn();
     const deferred = defer(fn);
 
-    expect(() => deferred.wait()).toThrowErrorMatchingInlineSnapshot(
-      `"The deferred function should be called before calling \`wait()\`"`
-    );
+    expect(() => deferred.wait()).toThrowErrorMatchingSnapshot();
   });
 
   it('recovers a deferred function that throws an error', async () => {

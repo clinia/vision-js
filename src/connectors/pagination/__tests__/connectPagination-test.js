@@ -41,7 +41,7 @@ describe('connectPagination', () => {
 
       expect(widget).toEqual(
         expect.objectContaining({
-          $$type: 'ais.pagination',
+          $$type: 'cvi.pagination',
           init: expect.any(Function),
           render: expect.any(Function),
           dispose: expect.any(Function),

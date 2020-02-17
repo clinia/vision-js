@@ -6,9 +6,7 @@ describe('toWarnDev', () => {
       expect(() => {
         // @ts-ignore:next-line
         expect(() => {}).toWarnDev(false);
-      }).toThrowErrorMatchingInlineSnapshot(
-        `"toWarnDev() requires a parameter of type string but was given boolean."`
-      );
+      }).toThrowErrorMatchingSnapshot();
     });
   });
 
@@ -25,7 +23,7 @@ describe('toWarnDev', () => {
       test('fails if not called', () => {
         expect(() => {
           expect(() => {}).toWarnDev();
-        }).toThrowErrorMatchingInlineSnapshot(`"No warning recorded."`);
+        }).toThrowErrorMatchingSnapshot();
       });
     });
 
@@ -48,3 +46,5 @@ describe('toWarnDev', () => {
     });
   }
 });
+
+/* eslint-enable no-console */

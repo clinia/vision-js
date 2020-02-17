@@ -112,7 +112,7 @@ export default function connectPagination(renderFn, unmountFn = noop) {
           {
             createURL: this.createURL(helper.state),
             currentRefinement: helper.state.page || 0,
-            toal: 0,
+            total: 0,
             numPages: 0,
             pages: [],
             isFirstPage: true,

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`insights default behaviour 1`] = `"data-insights-method=\\"clickedRecordIDsAfterSearch\\" data-insights-payload=\\"eyJpZHMiOlsiMyJdLCJldmVudE5hbWUiOiJBZGQgdG8gQ2FydCJ9\\""`;
+
+exports[`readDataAttributes on handwritten data-insights-* attributes should reject invalid payload 1`] = `"The insights helper was unable to parse \`data-insights-payload\`."`;
+
+exports[`writeDataAttributes should output a string containing data-insights-* attributes 1`] = `"data-insights-method=\\"clickedRecordIDsAfterSearch\\" data-insights-payload=\\"eyJpZHMiOlsiMyJdLCJldmVudE5hbWUiOiJBZGQgdG8gQ2FydCJ9\\""`;
+
+exports[`writeDataAttributes should reject non JSON serializable payloads 1`] = `"Could not JSON serialize the payload object."`;
+
+exports[`writeDataAttributes should reject non object payloads 1`] = `"The insights helper expects the payload to be an object."`;
+
+exports[`writeDataAttributes should reject undefined payloads 1`] = `"The insights helper expects the payload to be an object."`;

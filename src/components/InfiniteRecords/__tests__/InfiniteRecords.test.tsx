@@ -37,7 +37,8 @@ describe('InfiniteRecrods', () => {
         hasShowPrevious: false,
         showPrevious: () => {},
         showMore: () => {},
-        results: { records },
+        // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+        results: { records } as SearchResults,
         records,
         isFirstPage: true,
         isLastPage: false,
@@ -75,6 +76,7 @@ describe('InfiniteRecrods', () => {
         hasShowPrevious: false,
         showPrevious: () => {},
         showMore: () => {},
+        // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
         results: { records } as SearchResults,
         records,
         isFirstPage: false,
@@ -102,6 +104,7 @@ describe('InfiniteRecrods', () => {
         hasShowPrevious: false,
         showPrevious: () => {},
         showMore: () => {},
+        // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
         results: { records } as SearchResults,
         records,
         isFirstPage: true,
@@ -129,6 +132,7 @@ describe('InfiniteRecrods', () => {
         hasShowPrevious: false,
         showPrevious: () => {},
         showMore: () => {},
+        // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
         results: { records } as SearchResults,
         records,
         isFirstPage: false,
@@ -167,6 +171,7 @@ describe('InfiniteRecrods', () => {
         hasShowPrevious: true,
         showPrevious: () => {},
         showMore: () => {},
+        // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
         results: { records } as SearchResults,
         records,
         isFirstPage: true,
@@ -210,6 +215,7 @@ describe('InfiniteRecrods', () => {
         hasShowPrevious: true,
         showPrevious: () => {},
         showMore: () => {},
+        // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
         results: { records } as SearchResults,
         records,
         isFirstPage: false,

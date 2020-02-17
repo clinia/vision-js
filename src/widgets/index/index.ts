@@ -356,19 +356,7 @@ const index = (props: IndexProps): Index => {
           const stateToWidgetsMap: StateToWidgets = {
             query: {
               connectors: ['connectSearchBox'],
-              widgets: ['cvi.searchBox', 'cvi.autocomplete', 'cvi.voiceSearch'],
-            },
-            refinementList: {
-              connectors: ['connectRefinementList'],
-              widgets: ['cvi.refinementList'],
-            },
-            menu: {
-              connectors: ['connectMenu'],
-              widgets: ['cvi.menu'],
-            },
-            toggle: {
-              connectors: ['connectToggleRefinement'],
-              widgets: ['cvi.toggleRefinement'],
+              widgets: ['cvi.searchBox', 'cvi.autocomplete'],
             },
             geoSearch: {
               connectors: ['connectGeoSearch'],

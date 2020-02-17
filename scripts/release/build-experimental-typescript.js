@@ -20,3 +20,5 @@ fs.writeFileSync(
 
 shell.exec(`NODE_ENV=production VERSION=${newVersion} yarn build`);
 shell.exec('yarn build:types');
+
+/* eslint-enable import/no-commonjs */

@@ -79,7 +79,7 @@ export default function connectRecords(renderFn, unmountFn = noop) {
           results.perPage
         );
 
-        results.records = addQueryID(results.records, results.queryId);
+        results.records = addQueryID(results.records, results.queryID);
 
         results.records = transformItems(results.records);
 

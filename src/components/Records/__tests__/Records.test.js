@@ -160,7 +160,7 @@ describe('Records', () => {
       expect(wrapper.at(1).props().data.foo).toEqual('baz');
     });
 
-    it('should add the __hitIndex in the list to each item', () => {
+    it('should add the __recordIndex in the list to each item', () => {
       const records = [
         {
           id: 'one',
@@ -184,8 +184,8 @@ describe('Records', () => {
 
       const wrapper = shallowRender(props).find({ templateKey: 'item' });
 
-      expect(wrapper.at(0).props().data.__hitIndex).toEqual(0);
-      expect(wrapper.at(1).props().data.__hitIndex).toEqual(1);
+      expect(wrapper.at(0).props().data.__recordIndex).toEqual(0);
+      expect(wrapper.at(1).props().data.__recordIndex).toEqual(1);
     });
 
     it('should use the id as the DOM key', () => {

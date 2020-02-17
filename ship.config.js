@@ -17,7 +17,7 @@ module.exports = {
       `export default '${version}';\n`
     );
   },
-  beforeCommitChanges: ({ exec }) => {
+  beforeCommitChanges: () => {
     // exec('yarn doctoc');
   },
   pullRequestTeamReviewer: ['vision-for-websites'],
@@ -74,3 +74,5 @@ module.exports = {
     }),
   },
 };
+
+/* eslint-enable import/no-commonjs */

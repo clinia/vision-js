@@ -17,9 +17,7 @@ describe('insights', () => {
         ids: ['3'],
         eventName: 'Add to Cart',
       })
-    ).toMatchInlineSnapshot(
-      `"data-insights-method=\\"clickedRecordIDsAfterSearch\\" data-insights-payload=\\"eyJpZHMiOlsiMyJdLCJldmVudE5hbWUiOiJBZGQgdG8gQ2FydCJ9\\""`
-    );
+    ).toMatchSnapshot();
   });
 });
 
@@ -33,9 +31,7 @@ describe('writeDataAttributes', () => {
           eventName: 'Add to Cart',
         },
       })
-    ).toMatchInlineSnapshot(
-      `"data-insights-method=\\"clickedRecordIDsAfterSearch\\" data-insights-payload=\\"eyJpZHMiOlsiMyJdLCJldmVudE5hbWUiOiJBZGQgdG8gQ2FydCJ9\\""`
-    );
+    ).toMatchSnapshot();
   });
   it('should reject undefined payloads', () => {
     expect(() =>
@@ -43,9 +39,7 @@ describe('writeDataAttributes', () => {
       writeDataAttributes({
         method: 'clickedRecordIDsAfterSearch',
       })
-    ).toThrowErrorMatchingInlineSnapshot(
-      `"The insights helper expects the payload to be an object."`
-    );
+    ).toThrowErrorMatchingSnapshot();
   });
   it('should reject non object payloads', () => {
     expect(() =>
@@ -54,9 +48,7 @@ describe('writeDataAttributes', () => {
         // @ts-ignore
         payload: 2,
       })
-    ).toThrowErrorMatchingInlineSnapshot(
-      `"The insights helper expects the payload to be an object."`
-    );
+    ).toThrowErrorMatchingSnapshot();
   });
   it('should reject non JSON serializable payloads', () => {
     const circularObject: any = { a: {} };
@@ -66,9 +58,7 @@ describe('writeDataAttributes', () => {
         method: 'clickedRecordIDsAfterSearch',
         payload: circularObject,
       })
-    ).toThrowErrorMatchingInlineSnapshot(
-      `"Could not JSON serialize the payload object."`
-    );
+    ).toThrowErrorMatchingSnapshot();
   });
 });
 
@@ -132,9 +122,7 @@ describe('readDataAttributes', () => {
       );
       expect(() =>
         readDataAttributes(domElement)
-      ).toThrowErrorMatchingInlineSnapshot(
-        `"The insights helper was unable to parse \`data-insights-payload\`."`
-      );
+      ).toThrowErrorMatchingSnapshot();
     });
   });
 

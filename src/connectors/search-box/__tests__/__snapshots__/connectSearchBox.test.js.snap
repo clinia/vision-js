@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`connectSearchBox Usage throws without render function 1`] = `
+"The render function is not valid (received type Undefined).
+
+See documentation: https://www.clinia.com/doc/api-reference/widgets/search-box/js/#connector"
+`;

@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`utils.renderTemplate expect to compress templates 1`] = `"<h1> hello</h1> <p>message</p>"`;

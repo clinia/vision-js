@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Usage throws if a widget without dispose method is removed 1`] = `
+"The widget definition expects a \`dispose\` method.
+
+See documentation: https://www.clinia.com/doc/api-reference/widgets/vision/js/"
+`;
+
 exports[`Usage throws if a widget without render or init method is added 1`] = `
 "The widget definition expects a \`render\` and/or an \`init\` method.
 
@@ -12,11 +18,31 @@ exports[`Usage throws if addWidgets is called with a single widget 1`] = `
 See documentation: https://www.clinia.com/doc/api-reference/widgets/vision/js/"
 `;
 
+exports[`Usage throws if createURL is called before start 1`] = `
+"The \`start\` method needs to be called before \`createURL\`.
+
+See documentation: https://www.clinia.com/doc/api-reference/widgets/vision/js/"
+`;
+
 exports[`Usage throws if insightsClient is not a function 1`] = `
 "The \`insightsClient\` option should be a function.
 
 See documentation: https://www.clinia.com/doc/api-reference/widgets/vision/js/"
 `;
+
+exports[`Usage throws if refresh is called before start 1`] = `
+"The \`start\` method needs to be called before \`refresh\`.
+
+See documentation: https://www.clinia.com/doc/api-reference/widgets/vision/js/"
+`;
+
+exports[`Usage throws if removeWidgets is called with a single widget 1`] = `
+"The \`removeWidgets\` method expects an array of widgets.
+
+See documentation: https://www.clinia.com/doc/api-reference/widgets/vision/js/"
+`;
+
+exports[`Usage throws if searchClient does not implement a search method 1`] = `"The \`searchClient\` must implement a \`search\` method."`;
 
 exports[`Usage throws without indexName 1`] = `
 "The \`indexName\` option is required.
@@ -26,6 +52,12 @@ See documentation: https://www.clinia.com/doc/api-reference/widgets/vision/js/"
 
 exports[`Usage throws without searchClient 1`] = `
 "The \`searchClient\` option is required.
+
+See documentation: https://www.clinia.com/doc/api-reference/widgets/vision/js/"
+`;
+
+exports[`start does not to start twice 1`] = `
+"The \`start\` method has already been called once.
 
 See documentation: https://www.clinia.com/doc/api-reference/widgets/vision/js/"
 `;

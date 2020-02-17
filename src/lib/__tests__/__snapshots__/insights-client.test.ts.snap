@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`withInsights exposed insights client wrapper should reject if ids provided have different queryIDs 1`] = `"Insights currently allows a single \`queryID\`. The \`IDs\` provided map to multiple \`queryID\`s."`;
+
+exports[`withInsights exposed insights client wrapper should reject if no queryID found (clickAnalytics was not set to true) 1`] = `"Could not infer \`queryID\`. Ensure Vision \`clickAnalytics: true\` was added with the Configure widget."`;
+
+exports[`withInsights exposed insights client wrapper should reject non-existing ids 1`] = `"Could not find id \\"xxxxxx\\" passed to \`clickedIdsAfterSearch\` in the returned records. This is necessary to infer the absolute position and the query id."`;
+
+exports[`withInsights exposed insights client wrapper should reject unknown method name 1`] = `"Unsupported method passed to insights: \\"unknow_method\\"."`;
+
 exports[`withInsights when applied on connectRecords should expose the insights client wrapper that throws when insightsClient was not provided 1`] = `
 "The \`insightsClient\` option has not been provided to \`vision\`.
 

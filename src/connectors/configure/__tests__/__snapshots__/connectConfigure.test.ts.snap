@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`connectConfigure Usage throws when you pass it a non-plain object 1`] = `
+"The \`searchParameters\` option expects an object.
+
+See documentation: https://www.clinia.com/doc/api-reference/widgets/configure/js/#connector"
+`;
+
+exports[`connectConfigure Usage throws when you pass it a non-plain object 2`] = `
+"The \`searchParameters\` option expects an object.
+
+See documentation: https://www.clinia.com/doc/api-reference/widgets/configure/js/#connector"
+`;
+
+exports[`connectConfigure Usage throws without searchParameters 1`] = `
+"The \`searchParameters\` option expects an object.
+
+See documentation: https://www.clinia.com/doc/api-reference/widgets/configure/js/#connector"
+`;

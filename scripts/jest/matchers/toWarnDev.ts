@@ -70,3 +70,5 @@ ${jestDiff(expectedMessage, actualWarning)}`,
 };
 
 export default matcher;
+
+/* eslint-enable no-console, no-redeclare */

@@ -32,36 +32,3 @@ Array [
   </div>,
 ]
 `;
-
-exports[`Records markup should render <Records /> without highlight function 1`] = `
-Array [
-  <div
-    className="root"
-  >
-    <ol
-      className="list"
-    >
-      Array [
-        <li
-          className="item"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<mark class=\\"cvi-Highlight-highlighted\\">name 1</mark>",
-            }
-          }
-        />,
-      ]
-      Array [
-        <li
-          className="item"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<mark class=\\"cvi-Highlight-highlighted\\">name 2</mark>",
-            }
-          }
-        />,
-      ]
-    </ol>
-  </div>,
-]
-`;

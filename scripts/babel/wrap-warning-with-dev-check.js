@@ -55,3 +55,5 @@ function wrapWarningInDevCheck(babel) {
 }
 
 module.exports = wrapWarningInDevCheck;
+
+/* eslint-enable import/no-commonjs */

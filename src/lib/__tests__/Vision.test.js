@@ -60,9 +60,7 @@ describe('Usage', () => {
     expect(() => {
       // eslint-disable-next-line no-new
       new Vision({ indexName: 'indexName', searchClient: {} });
-    }).toThrowErrorMatchingInlineSnapshot(
-      `"The \`searchClient\` must implement a \`search\` method."`
-    );
+    }).toThrowErrorMatchingSnapshot();
   });
 
   it('throws if insightsClient is not a function', () => {
@@ -180,11 +178,7 @@ See documentation: https://www.clinia.com/doc/api-reference/widgets/vision/js/`;
         searchClient: createSearchClient(),
       });
       search.removeWidgets({});
-    }).toThrowErrorMatchingInlineSnapshot(`
-"The \`removeWidgets\` method expects an array of widgets.
-
-See documentation: https://www.clinia.com/doc/api-reference/widgets/vision/js/"
-`);
+    }).toThrowErrorMatchingSnapshot();
   });
 
   it('throws if a widget without dispose method is removed', () => {
@@ -196,11 +190,7 @@ See documentation: https://www.clinia.com/doc/api-reference/widgets/vision/js/"
         searchClient: createSearchClient(),
       });
       search.removeWidgets(widgets);
-    }).toThrowErrorMatchingInlineSnapshot(`
-"The widget definition expects a \`dispose\` method.
-
-See documentation: https://www.clinia.com/doc/api-reference/widgets/vision/js/"
-`);
+    }).toThrowErrorMatchingSnapshot();
   });
 
   it('throws if createURL is called before start', () => {
@@ -209,11 +199,7 @@ See documentation: https://www.clinia.com/doc/api-reference/widgets/vision/js/"
       searchClient: createSearchClient(),
     });
 
-    expect(() => search.createURL()).toThrowErrorMatchingInlineSnapshot(`
-"The \`start\` method needs to be called before \`createURL\`.
-
-See documentation: https://www.clinia.com/doc/api-reference/widgets/vision/js/"
-`);
+    expect(() => search.createURL()).toThrowErrorMatchingSnapshot();
   });
 
   it('throws if refresh is called before start', () => {
@@ -222,11 +208,7 @@ See documentation: https://www.clinia.com/doc/api-reference/widgets/vision/js/"
       searchClient: createSearchClient(),
     });
 
-    expect(() => search.refresh()).toThrowErrorMatchingInlineSnapshot(`
-"The \`start\` method needs to be called before \`refresh\`.
-
-See documentation: https://www.clinia.com/doc/api-reference/widgets/vision/js/"
-`);
+    expect(() => search.refresh()).toThrowErrorMatchingSnapshot();
   });
 });
 
@@ -568,11 +550,7 @@ describe('start', () => {
     expect(() => instance.start()).not.toThrow();
     expect(() => {
       instance.start();
-    }).toThrowErrorMatchingInlineSnapshot(`
-"The \`start\` method has already been called once.
-
-See documentation: https://www.clinia.com/doc/api-reference/widgets/vision/js/"
-`);
+    }).toThrowErrorMatchingSnapshot();
   });
 });
 
@@ -1363,12 +1341,6 @@ describe('UI state', () => {
           refinementList: {
             brand: ['Apple'],
           },
-          hierarchicalMenu: {
-            categories: 'Mobile',
-          },
-          range: {
-            price: '100:200',
-          },
           menu: {
             category: 'Hardware',
           },
@@ -1401,24 +1373,15 @@ This can happen when the UI state is specified via \`initialUiState\` or \`routi
 To fully reflect the state, some widgets need to be added to the index "indexName":
 
 - \`page\` needs one of these widgets: "pagination", "infiniteRecords"
-- \`refinementList\` needs one of these widgets: "refinementList"
-- \`hierarchicalMenu\` needs one of these widgets: "hierarchicalMenu"
-- \`range\` needs one of these widgets: "rangeInput", "rangeSlider"
-- \`menu\` needs one of these widgets: "menu", "menuSelect"
 - \`places\` needs one of these widgets: "places"
 
 If you do not wish to display widgets but still want to support their search parameters, you can mount "virtual widgets" that don't render anything:
 
 \`\`\`
 const virtualPagination = connectPagination(() => null);
-const virtualRefinementList = connectRefinementList(() => null);
 
 search.addWidgets([
-  virtualPagination({ /* ... */ }),
-  virtualRefinementList({ /* ... */ }),
-  virtualHierarchicalMenu({ /* ... */ }),
-  virtualRangeInput({ /* ... */ }),
-  virtualMenu({ /* ... */ })
+  virtualPagination({ /* ... */ })
 ]);
 \`\`\`
 

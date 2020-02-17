@@ -53,7 +53,7 @@ const renderer = ({ renderState, cssClasses, containerNode, templates }) => (
 /**
  * @typedef {Object} RecordsTemplates
  * @property {string|function(object):string} [empty=''] Template to use when there are no results.
- * @property {string|function(object):string} [item=''] Template to use for each result. This template will receive an object containing a single record. The record will have a new property `__hitIndex` for the position of the record in the list of displayed records.
+ * @property {string|function(object):string} [item=''] Template to use for each result. This template will receive an object containing a single record. The record will have a new property `__recordIndex` for the position of the record in the list of displayed records.
  */
 
 /**

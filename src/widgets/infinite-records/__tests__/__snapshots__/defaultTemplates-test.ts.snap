@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`records defaultTemplates has a \`showPreviousText\` default template 1`] = `"Show previous results"`;

@@ -31,11 +31,7 @@ describe('connectSearchBox', () => {
     it('throws without render function', () => {
       expect(() => {
         connectSearchBox()({});
-      }).toThrowErrorMatchingInlineSnapshot(`
-        "The render function is not valid (received type Undefined).
-
-        See documentation: https://www.clinia.com/doc/api-reference/widgets/search-box/js/#connector"
-      `);
+      }).toThrowErrorMatchingSnapshot();
     });
 
     it('is a widget', () => {

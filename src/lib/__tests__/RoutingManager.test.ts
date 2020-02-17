@@ -92,7 +92,7 @@ const createFakeSearchBox = (): Widget =>
     },
   });
 
-const createFakePerPage = (): Widget =>
+const createFakeRecordsPerPage = (): Widget =>
   createWidget({
     dispose({ state }) {
       return state;
@@ -288,7 +288,7 @@ describe('RoutingManager', () => {
       });
 
       const fakeSearchBox: any = createFakeSearchBox();
-      const fakeRecordsPerPage = createFakePerPage();
+      const fakeRecordsPerPage = createFakeRecordsPerPage();
 
       search.addWidgets([fakeSearchBox, fakeRecordsPerPage]);
 
@@ -512,36 +512,7 @@ describe('RoutingManager', () => {
       });
 
       expect(parsedUrl.refinementList.brand).toBeInstanceOf(Array);
-      expect(parsedUrl).toMatchInlineSnapshot(`
-        Object {
-          "refinementList": Object {
-            "brand": Array [
-              "brand-0",
-              "brand-1",
-              "brand-2",
-              "brand-3",
-              "brand-4",
-              "brand-5",
-              "brand-6",
-              "brand-7",
-              "brand-8",
-              "brand-9",
-              "brand-10",
-              "brand-11",
-              "brand-12",
-              "brand-13",
-              "brand-14",
-              "brand-15",
-              "brand-16",
-              "brand-17",
-              "brand-18",
-              "brand-19",
-              "brand-20",
-              "brand-21",
-            ],
-          },
-        }
-      `);
+      expect(parsedUrl).toMatchSnapshot();
     });
 
     test('should support returning 100 refinements as array', () => {

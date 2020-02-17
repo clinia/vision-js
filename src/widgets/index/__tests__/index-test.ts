@@ -94,21 +94,13 @@ describe('index', () => {
     expect(() => {
       // @ts-ignore
       index();
-    }).toThrowErrorMatchingInlineSnapshot(`
-"The \`indexName\` option is required.
-
-See documentation: https://www.clinia.com/doc/api-reference/widgets/index-widget/js/"
-`);
+    }).toThrowErrorMatchingSnapshot();
   });
 
   it('throws without `indexName` option', () => {
     expect(() => {
       index({} as any);
-    }).toThrowErrorMatchingInlineSnapshot(`
-"The \`indexName\` option is required.
-
-See documentation: https://www.clinia.com/doc/api-reference/widgets/index-widget/js/"
-`);
+    }).toThrowErrorMatchingSnapshot();
   });
 
   it('is a widget', () => {
@@ -116,7 +108,7 @@ See documentation: https://www.clinia.com/doc/api-reference/widgets/index-widget
 
     expect(widget).toEqual(
       expect.objectContaining({
-        $$type: 'ais.index',
+        $$type: 'cvi.index',
         init: expect.any(Function),
         render: expect.any(Function),
         dispose: expect.any(Function),
@@ -166,11 +158,7 @@ See documentation: https://www.clinia.com/doc/api-reference/widgets/index-widget
 
       expect(() => {
         instance.addWidgets(createWidget() as any);
-      }).toThrowErrorMatchingInlineSnapshot(`
-"The \`addWidgets\` method expects an array of widgets.
-
-See documentation: https://www.clinia.com/doc/api-reference/widgets/index-widget/js/"
-`);
+      }).toThrowErrorMatchingSnapshot();
     });
 
     it('throws an error with widgets that do not implement `init` or `render`', () => {
@@ -178,11 +166,7 @@ See documentation: https://www.clinia.com/doc/api-reference/widgets/index-widget
 
       expect(() => {
         instance.addWidgets([{ dummy: true } as any]);
-      }).toThrowErrorMatchingInlineSnapshot(`
-"The widget definition expects a \`render\` and/or an \`init\` method.
-
-See documentation: https://www.clinia.com/doc/api-reference/widgets/index-widget/js/"
-`);
+      }).toThrowErrorMatchingSnapshot();
     });
 
     describe('with a started instance', () => {
@@ -363,11 +347,7 @@ See documentation: https://www.clinia.com/doc/api-reference/widgets/index-widget
 
       expect(() => {
         instance.removeWidgets(createWidget() as any);
-      }).toThrowErrorMatchingInlineSnapshot(`
-"The \`removeWidgets\` method expects an array of widgets.
-
-See documentation: https://www.clinia.com/doc/api-reference/widgets/index-widget/js/"
-`);
+      }).toThrowErrorMatchingSnapshot();
     });
 
     it('throws an error with widgets that do not implement `dispose`', () => {
@@ -375,11 +355,7 @@ See documentation: https://www.clinia.com/doc/api-reference/widgets/index-widget
 
       expect(() => {
         instance.removeWidgets([{ dummy: true } as any]);
-      }).toThrowErrorMatchingInlineSnapshot(`
-"The widget definition expects a \`dispose\` method.
-
-See documentation: https://www.clinia.com/doc/api-reference/widgets/index-widget/js/"
-`);
+      }).toThrowErrorMatchingSnapshot();
     });
 
     describe('with a started instance', () => {
@@ -425,7 +401,7 @@ See documentation: https://www.clinia.com/doc/api-reference/widgets/index-widget
         const visionInstance = createVision();
 
         const configureTopLevel = createConfigure({
-          distinct: true,
+          queryType: 'prefix_last',
         });
 
         const configureSubLevel = createConfigure({
@@ -453,7 +429,7 @@ See documentation: https://www.clinia.com/doc/api-reference/widgets/index-widget
             index: 'indexName',
             query: 'Apple iPhone',
             perPage: 5,
-            distinct: true,
+            queryType: 'prefix_last',
           })
         );
 
@@ -463,7 +439,7 @@ See documentation: https://www.clinia.com/doc/api-reference/widgets/index-widget
           new SearchParameters({
             index: 'indexName',
             query: 'Apple iPhone',
-            distinct: true,
+            queryType: 'prefix_last',
           })
         );
 
@@ -598,43 +574,6 @@ See documentation: https://www.clinia.com/doc/api-reference/widgets/index-widget
       instance.getHelper()!.search();
 
       expect(search).toHaveBeenCalledTimes(1);
-    });
-
-    it('forwards the `searchForFacetValues` call to the main instance', () => {
-      const instance = index({ indexName: 'indexName' });
-      const mainHelper = searchHelper({} as any, '', {});
-      const visionInstance = createVision({
-        mainHelper,
-      });
-
-      const searchForFacetValues = jest
-        .spyOn(mainHelper, 'searchForFacetValues')
-        .mockImplementation();
-
-      instance.init(
-        createInitOptions({
-          visionInstance,
-          parent: null,
-        })
-      );
-
-      // Simulate a call to searchForFacetValues from a widget
-      instance.getHelper()!.searchForFacetValues('brand', 'Apple', 10, {
-        highlightPreTag: '<mark>',
-        highlightPostTag: '</mark>',
-      });
-
-      expect(searchForFacetValues).toHaveBeenCalledTimes(1);
-      expect(searchForFacetValues).toHaveBeenCalledWith(
-        'brand',
-        'Apple',
-        10,
-        expect.objectContaining({
-          index: 'indexName',
-          highlightPreTag: '<mark>',
-          highlightPostTag: '</mark>',
-        })
-      );
     });
 
     it('uses the internal state for the queries', () => {

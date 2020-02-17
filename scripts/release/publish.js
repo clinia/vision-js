@@ -246,3 +246,6 @@ inquirer
       });
   })
   .catch(e => shell.echo(e));
+
+/* eslint-enable no-process-exit */
+/* eslint-enable import/no-commonjs */

@@ -15,7 +15,7 @@ export interface VisionRecord {
 
 export interface Record extends VisionRecord {
   __position: number;
-  __queryId?: string;
+  __queryID?: string;
 }
 
 export type Records = Record[];

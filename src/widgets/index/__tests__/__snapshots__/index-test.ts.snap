@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`index addWidgets throws an error with a value different than \`array\` 1`] = `
+"The \`addWidgets\` method expects an array of widgets.
+
+See documentation: https://www.clinia.com/doc/api-reference/widgets/index-widget/js/"
+`;
+
+exports[`index addWidgets throws an error with widgets that do not implement \`init\` or \`render\` 1`] = `
+"The widget definition expects a \`render\` and/or an \`init\` method.
+
+See documentation: https://www.clinia.com/doc/api-reference/widgets/index-widget/js/"
+`;
+
+exports[`index removeWidgets throws an error with a value different than \`array\` 1`] = `
+"The \`removeWidgets\` method expects an array of widgets.
+
+See documentation: https://www.clinia.com/doc/api-reference/widgets/index-widget/js/"
+`;
+
+exports[`index removeWidgets throws an error with widgets that do not implement \`dispose\` 1`] = `
+"The widget definition expects a \`dispose\` method.
+
+See documentation: https://www.clinia.com/doc/api-reference/widgets/index-widget/js/"
+`;
+
+exports[`index throws without \`indexName\` option 1`] = `
+"The \`indexName\` option is required.
+
+See documentation: https://www.clinia.com/doc/api-reference/widgets/index-widget/js/"
+`;
+
+exports[`index throws without argument 1`] = `
+"The \`indexName\` option is required.
+
+See documentation: https://www.clinia.com/doc/api-reference/widgets/index-widget/js/"
+`;

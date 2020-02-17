@@ -24,11 +24,7 @@ describe('connectInfiniteRecords', () => {
     expect(() => {
       // @ts-ignore: test connectInfiniteRecords with invalid parameters
       connectInfiniteRecords()({});
-    }).toThrowErrorMatchingInlineSnapshot(`
-"The render function is not valid (received type Undefined).
-
-See documentation: https://www.clinia.com/doc/api-reference/widgets/infinite-records/js/#connector"
-`);
+    }).toThrowErrorMatchingSnapshot();
   });
 
   it('is a widget', () => {
@@ -401,7 +397,7 @@ See documentation: https://www.clinia.com/doc/api-reference/widgets/infinite-rec
     ];
 
     const results = new SearchResults(helper.state, [
-      createSingleSearchResponse({ records, queryID: 'theQueryID' }),
+      createSingleSearchResponse({ records, meta: { queryID: 'theQueryID' } }),
     ]);
 
     widget.render!(

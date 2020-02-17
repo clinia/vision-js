@@ -193,3 +193,9 @@ Object {
   "submitIcon": "cvi-SearchBox-submiticon",
 }
 `;
+
+exports[`searchBox() Usage throws without container 1`] = `
+"The \`container\` option is required.
+
+See documentation: https://www.clinia.com/doc/api-reference/widgets/search-box/js/"
+`;

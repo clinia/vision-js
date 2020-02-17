@@ -1,3 +1,4 @@
+/* eslint-disable import/no-commonjs */
 const defineTest = require('jscodeshift/dist/testUtils').defineTest;
 
 defineTest(
@@ -27,3 +28,5 @@ defineTest(
   null,
   'addWidget-to-addWidgets/remove'
 );
+
+/* eslint-enable import/no-commonjs */

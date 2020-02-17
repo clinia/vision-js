@@ -65,8 +65,8 @@ storiesOf('Basics|SearchBox', module)
         vision.widgets.searchBox({
           container,
           templates: {
-            submit: '<div class="ais-search-box--magnifier">🔍</div>',
-            reset: '<div class="ais-search-box--reset">✖️</div>',
+            submit: '<div class="cvi-search-box--magnifier">🔍</div>',
+            reset: '<div class="cvi-search-box--reset">✖️</div>',
           },
         }),
       ]);

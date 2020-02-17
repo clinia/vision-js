@@ -30,11 +30,7 @@ describe('searchBox()', () => {
         searchBox({
           container: undefined,
         });
-      }).toThrowErrorMatchingInlineSnapshot(`
-        "The \`container\` option is required.
-
-        See documentation: https://www.clinia.com/doc/api-reference/widgets/search-box/js/"
-      `);
+      }).toThrowErrorMatchingSnapshot();
     });
   });
 

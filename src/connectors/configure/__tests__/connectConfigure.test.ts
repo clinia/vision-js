@@ -20,31 +20,19 @@ describe('connectConfigure', () => {
   describe('Usage', () => {
     it('throws without searchParameters', () => {
       // @ts-ignore wrong options
-      expect(() => connectConfigure()()).toThrowErrorMatchingInlineSnapshot(`
-"The \`searchParameters\` option expects an object.
-
-See documentation: https://www.clinia.com/doc/api-reference/widgets/configure/js/#connector"
-`);
+      expect(() => connectConfigure()()).toThrowErrorMatchingSnapshot();
     });
 
     it('throws when you pass it a non-plain object', () => {
       expect(() => {
         // @ts-ignore wrong options
         connectConfigure()(new Date());
-      }).toThrowErrorMatchingInlineSnapshot(`
-"The \`searchParameters\` option expects an object.
-
-See documentation: https://www.clinia.com/doc/api-reference/widgets/configure/js/#connector"
-`);
+      }).toThrowErrorMatchingSnapshot();
 
       expect(() => {
         // @ts-ignore wrong options
         connectConfigure()(() => {});
-      }).toThrowErrorMatchingInlineSnapshot(`
-"The \`searchParameters\` option expects an object.
-
-See documentation: https://www.clinia.com/doc/api-reference/widgets/configure/js/#connector"
-`);
+      }).toThrowErrorMatchingSnapshot();
     });
 
     it('does not throw with a render function but without an unmount function', () => {

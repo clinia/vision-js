@@ -15,11 +15,7 @@ describe('connectRecords', () => {
   it('throws without render function', () => {
     expect(() => {
       connectRecords()({});
-    }).toThrowErrorMatchingInlineSnapshot(`
-"The render function is not valid (received type Undefined).
-
-See documentation: https://www.clinia.com/doc/api-reference/widgets/records/js/#connector"
-`);
+    }).toThrowErrorMatchingSnapshot();
   });
 
   it('is a widget', () => {
@@ -99,7 +95,6 @@ See documentation: https://www.clinia.com/doc/api-reference/widgets/records/js/#
     );
 
     const records = [{ fake: 'data' }, { sample: 'infos' }];
-    records.__escaped = true;
 
     const results = new SearchResults(helper.state, [
       { records: [].concat(records), meta: {} },
@@ -153,7 +148,6 @@ See documentation: https://www.clinia.com/doc/api-reference/widgets/records/js/#
     });
 
     const expectedRecords = [{ name: 'transformed' }, { name: 'transformed' }];
-    expectedRecords.__escaped = true;
 
     expect(renderFn).toHaveBeenNthCalledWith(
       2,
@@ -195,7 +189,6 @@ See documentation: https://www.clinia.com/doc/api-reference/widgets/records/js/#
       { name: 'name 1', __queryID: 'theQueryID' },
       { name: 'name 2', __queryID: 'theQueryID' },
     ];
-    expectedRecords.__escaped = true;
 
     expect(renderFn).toHaveBeenNthCalledWith(
       2,

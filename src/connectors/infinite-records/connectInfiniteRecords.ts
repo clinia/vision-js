@@ -151,8 +151,6 @@ const connectInfiniteRecords: InfiniteRecordsConnector = (
           prevState = currentState;
         }
 
-        const initialEscaped = (results.records as any).__escaped;
-
         results.records = addAbsolutePosition(
           results.records,
           results.page,
@@ -162,11 +160,6 @@ const connectInfiniteRecords: InfiniteRecordsConnector = (
         results.records = addQueryID(results.records, results.queryID);
 
         results.records = transformItems(results.records);
-
-        // Make sure the escaped tag stays after mapping over the records.
-        // This prevents the records from being double-escaped if there are multiple
-        // records widgets mounted on the page.
-        (results.records as any).__escaped = initialEscaped;
 
         if (lastReceivedPage < page || !recordsCache.length) {
           recordsCache = [...recordsCache, ...results.records];

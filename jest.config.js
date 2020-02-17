@@ -25,3 +25,5 @@ module.exports = {
     __DEV__: true,
   },
 };
+
+/* eslint-enable import/no-commonjs */

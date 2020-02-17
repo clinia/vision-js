@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`defer throws an error when \`wait\` is called before the deferred function 1`] = `"The deferred function should be called before calling \`wait()\`"`;

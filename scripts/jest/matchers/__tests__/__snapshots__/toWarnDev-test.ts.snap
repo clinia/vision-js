@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`toWarnDev usage fails with incorrect type of message 1`] = `"toWarnDev() requires a parameter of type string but was given boolean."`;
+
+exports[`toWarnDev without message fails if not called 1`] = `"No warning recorded."`;

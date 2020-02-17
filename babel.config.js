@@ -55,3 +55,5 @@ module.exports = api => {
     plugins: isTest ? testPlugins : buildPlugins,
   };
 };
+
+/* eslint-enable import/no-commonjs */

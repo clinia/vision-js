@@ -19,7 +19,7 @@ function clearRefinements({
   let finalState = helper.state.setPage(0);
 
   finalState = propertiesToClear.reduce((state, property) => {
-    if (finalState.isDisjunctiveFacet(attripropertybute)) {
+    if (finalState.isDisjunctiveFacet(property)) {
       return state.removeDisjunctiveFacetRefinement(property);
     }
     if (finalState.isConjunctiveFacet(property)) {

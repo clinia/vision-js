@@ -5,3 +5,277 @@ exports[`Usage throws without container 1`] = `
 
 See documentation: https://www.clinia.com/doc/api-reference/widgets/infinite-records/js/"
 `;
+
+exports[`infiniteRecords() calls twice render(<Records props />, container) 1`] = `
+Object {
+  "cssClasses": Object {
+    "disabledLoadMore": "cvi-InfiniteRecords-loadMore--disabled",
+    "disabledLoadPrevious": "cvi-InfiniteRecords-loadPrevious--disabled",
+    "emptyRoot": "cvi-InfiniteRecords--empty",
+    "item": "cvi-InfiniteRecords-item",
+    "list": "cvi-InfiniteRecords-list",
+    "loadMore": "cvi-InfiniteRecords-loadMore",
+    "loadPrevious": "cvi-InfiniteRecords-loadPrevious",
+    "root": "cvi-InfiniteRecords root cx",
+  },
+  "hasShowPrevious": false,
+  "insights": undefined,
+  "isFirstPage": true,
+  "isLastPage": false,
+  "records": Array [
+    Object {
+      "__position": 3,
+      "first": "hit",
+      "second": "hit",
+    },
+  ],
+  "results": Object {
+    "page": 1,
+    "perPage": 2,
+    "records": Array [
+      Object {
+        "__position": 3,
+        "first": "hit",
+        "second": "hit",
+      },
+    ],
+  },
+  "showMore": [Function],
+  "showPrevious": [Function],
+  "templateProps": Object {
+    "templates": Object {
+      "empty": "No results",
+      "item": [Function],
+      "showMoreText": "Show more results",
+      "showPreviousText": "Show previous results",
+    },
+    "templatesConfig": undefined,
+    "useCustomCompileOptions": Object {
+      "empty": false,
+      "item": false,
+      "showMoreText": false,
+      "showPreviousText": false,
+    },
+  },
+}
+`;
+
+exports[`infiniteRecords() calls twice render(<Records props />, container) 2`] = `
+Object {
+  "cssClasses": Object {
+    "disabledLoadMore": "cvi-InfiniteRecords-loadMore--disabled",
+    "disabledLoadPrevious": "cvi-InfiniteRecords-loadPrevious--disabled",
+    "emptyRoot": "cvi-InfiniteRecords--empty",
+    "item": "cvi-InfiniteRecords-item",
+    "list": "cvi-InfiniteRecords-list",
+    "loadMore": "cvi-InfiniteRecords-loadMore",
+    "loadPrevious": "cvi-InfiniteRecords-loadPrevious",
+    "root": "cvi-InfiniteRecords root cx",
+  },
+  "hasShowPrevious": false,
+  "insights": undefined,
+  "isFirstPage": true,
+  "isLastPage": false,
+  "records": Array [
+    Object {
+      "__position": 3,
+      "first": "hit",
+      "second": "hit",
+    },
+  ],
+  "results": Object {
+    "page": 1,
+    "perPage": 2,
+    "records": Array [
+      Object {
+        "__position": 3,
+        "first": "hit",
+        "second": "hit",
+      },
+    ],
+  },
+  "showMore": [Function],
+  "showPrevious": [Function],
+  "templateProps": Object {
+    "templates": Object {
+      "empty": "No results",
+      "item": [Function],
+      "showMoreText": "Show more results",
+      "showPreviousText": "Show previous results",
+    },
+    "templatesConfig": undefined,
+    "useCustomCompileOptions": Object {
+      "empty": false,
+      "item": false,
+      "showMoreText": false,
+      "showPreviousText": false,
+    },
+  },
+}
+`;
+
+exports[`infiniteRecords() if it is the last page, then the props should contain isLastPage true 1`] = `
+Object {
+  "cssClasses": Object {
+    "disabledLoadMore": "cvi-InfiniteRecords-loadMore--disabled",
+    "disabledLoadPrevious": "cvi-InfiniteRecords-loadPrevious--disabled",
+    "emptyRoot": "cvi-InfiniteRecords--empty",
+    "item": "cvi-InfiniteRecords-item",
+    "list": "cvi-InfiniteRecords-list",
+    "loadMore": "cvi-InfiniteRecords-loadMore",
+    "loadPrevious": "cvi-InfiniteRecords-loadPrevious",
+    "root": "cvi-InfiniteRecords root cx",
+  },
+  "hasShowPrevious": false,
+  "insights": undefined,
+  "isFirstPage": true,
+  "isLastPage": false,
+  "records": Array [
+    Object {
+      "__position": 1,
+      "first": "hit",
+      "second": "hit",
+    },
+  ],
+  "results": Object {
+    "numPages": 2,
+    "page": 0,
+    "perPage": 2,
+    "records": Array [
+      Object {
+        "__position": 1,
+        "first": "hit",
+        "second": "hit",
+      },
+    ],
+  },
+  "showMore": [Function],
+  "showPrevious": [Function],
+  "templateProps": Object {
+    "templates": Object {
+      "empty": "No results",
+      "item": [Function],
+      "showMoreText": "Show more results",
+      "showPreviousText": "Show previous results",
+    },
+    "templatesConfig": undefined,
+    "useCustomCompileOptions": Object {
+      "empty": false,
+      "item": false,
+      "showMoreText": false,
+      "showPreviousText": false,
+    },
+  },
+}
+`;
+
+exports[`infiniteRecords() if it is the last page, then the props should contain isLastPage true 2`] = `
+Object {
+  "cssClasses": Object {
+    "disabledLoadMore": "cvi-InfiniteRecords-loadMore--disabled",
+    "disabledLoadPrevious": "cvi-InfiniteRecords-loadPrevious--disabled",
+    "emptyRoot": "cvi-InfiniteRecords--empty",
+    "item": "cvi-InfiniteRecords-item",
+    "list": "cvi-InfiniteRecords-list",
+    "loadMore": "cvi-InfiniteRecords-loadMore",
+    "loadPrevious": "cvi-InfiniteRecords-loadPrevious",
+    "root": "cvi-InfiniteRecords root cx",
+  },
+  "hasShowPrevious": false,
+  "insights": undefined,
+  "isFirstPage": true,
+  "isLastPage": true,
+  "records": Array [
+    Object {
+      "__position": 1,
+      "first": "hit",
+      "second": "hit",
+    },
+  ],
+  "results": Object {
+    "numPages": 2,
+    "page": 1,
+    "perPage": 2,
+    "records": Array [
+      Object {
+        "__position": 3,
+        "first": "hit",
+        "second": "hit",
+      },
+    ],
+  },
+  "showMore": [Function],
+  "showPrevious": [Function],
+  "templateProps": Object {
+    "templates": Object {
+      "empty": "No results",
+      "item": [Function],
+      "showMoreText": "Show more results",
+      "showPreviousText": "Show previous results",
+    },
+    "templatesConfig": undefined,
+    "useCustomCompileOptions": Object {
+      "empty": false,
+      "item": false,
+      "showMoreText": false,
+      "showPreviousText": false,
+    },
+  },
+}
+`;
+
+exports[`infiniteRecords() renders transformed items 1`] = `
+Object {
+  "cssClasses": Object {
+    "disabledLoadMore": "cvi-InfiniteRecords-loadMore--disabled",
+    "disabledLoadPrevious": "cvi-InfiniteRecords-loadPrevious--disabled",
+    "emptyRoot": "cvi-InfiniteRecords--empty",
+    "item": "cvi-InfiniteRecords-item",
+    "list": "cvi-InfiniteRecords-list",
+    "loadMore": "cvi-InfiniteRecords-loadMore",
+    "loadPrevious": "cvi-InfiniteRecords-loadPrevious",
+    "root": "cvi-InfiniteRecords",
+  },
+  "hasShowPrevious": false,
+  "insights": [Function],
+  "isFirstPage": true,
+  "isLastPage": false,
+  "records": Array [
+    Object {
+      "__position": 3,
+      "first": "hit",
+      "second": "hit",
+      "transformed": true,
+    },
+  ],
+  "results": Object {
+    "page": 1,
+    "perPage": 2,
+    "records": Array [
+      Object {
+        "__position": 3,
+        "first": "hit",
+        "second": "hit",
+        "transformed": true,
+      },
+    ],
+  },
+  "showMore": [Function],
+  "showPrevious": [Function],
+  "templateProps": Object {
+    "templates": Object {
+      "empty": "No results",
+      "item": [Function],
+      "showMoreText": "Show more results",
+      "showPreviousText": "Show previous results",
+    },
+    "templatesConfig": undefined,
+    "useCustomCompileOptions": Object {
+      "empty": false,
+      "item": false,
+      "showMoreText": false,
+      "showPreviousText": false,
+    },
+  },
+}
+`;
