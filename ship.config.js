@@ -17,8 +17,8 @@ module.exports = {
       `export default '${version}';\n`
     );
   },
-  beforeCommitChanges: () => {
-    // exec('yarn doctoc');
+  beforeCommitChanges: ({ exec }) => {
+    exec('yarn doctoc');
   },
   pullRequestTeamReviewer: ['vision-for-websites'],
   buildCommand: ({ version }) =>

@@ -19,10 +19,8 @@ search API. It is part of the Vision product family:
 - [Getting started](#getting-started)
 - [Installation](#installation)
 - [Documentation](#documentation)
-- [Demos](#demos)
 - [Playground](#playground)
 - [Browser support](#browser-support)
-- [Contributing](#contributing)
 - [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->

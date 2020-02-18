@@ -116,4 +116,4 @@ workflows:
       - lint
       # - type check js (optional)
       # - e2e tests
-      # - release if needed
+      - release if needed
