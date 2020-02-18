@@ -53,7 +53,7 @@ describe('Records', () => {
   });
 
   describe('individual item templates', () => {
-    it('should add an item template for each hit', () => {
+    it('should add an item template for each record', () => {
       const records = [
         {
           id: 'one',

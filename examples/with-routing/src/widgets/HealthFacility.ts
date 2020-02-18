@@ -23,13 +23,13 @@ export const healthFacilities = records({
         : 'Please try another query.';
 
       return `
-  <div class="hits-empty-state">
+  <div class="records-empty-state">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
       width="138"
       height="138"
-      class="hits-empty-state-image"
+      class="records-empty-state-image"
     >
       <defs>
         <linearGradient id="c" x1="50%" x2="50%" y1="100%" y2="0%">
@@ -100,10 +100,10 @@ export const healthFacilities = records({
       </g>
     </svg>
 
-    <p class="hits-empty-state-title">
+    <p class="records-empty-state-title">
       Sorry, we can't find any matches to your query!
     </p>
-    <p class="hits-empty-state-description">
+    <p class="records-empty-state-description">
       ${description}
     </p>
   </div>

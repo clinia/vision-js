@@ -1,7 +1,7 @@
 // export { default as clearRefinements } from './clear-refinements/clear-refinements';
 export { default as configure } from './configure/configure';
 // export { default as currentRefinements } from './current-refinements/current-refinements';
-// export { default as geoSearch } from './geo-search/geo-search';
+export { default as geoSearch } from './geo-search/geo-search';
 // export { default as hierarchicalMenu } from './hierarchical-menu/hierarchical-menu';
 export { default as records } from './records/records';
 // export { default as recordsPerPage } from './records-per-page/records-per-page';

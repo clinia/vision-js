@@ -45,7 +45,7 @@ describe('infiniteRecords()', () => {
     });
     widget.init({ helper, visionInstance: {} });
     results = {
-      records: [{ first: 'hit', second: 'hit' }],
+      records: [{ first: 'record', second: 'record' }],
       perPage: 2,
       page: 1,
     };

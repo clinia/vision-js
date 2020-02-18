@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GeoSearch Usage throws without render function 1`] = `
+"The \`container\` option is required.
+
+See documentation: https://www.clinia.com/doc/api-reference/widgets/geo-search/js/"
+`;
+
+exports[`GeoSearch expect to render 1`] = `"<div class=\\"cvi-GeoSearch\\"><div class=\\"cvi-GeoSearch-map\\"></div><div class=\\"cvi-GeoSearch-tree\\"></div></div>"`;
+
+exports[`GeoSearch expect to render 2`] = `
+Object {
+  "cssClasses": Object {
+    "control": "cvi-GeoSearch-control",
+    "disabledRedo": "cvi-GeoSearch-redo--disabled",
+    "input": "cvi-GeoSearch-input",
+    "label": "cvi-GeoSearch-label",
+    "map": "cvi-GeoSearch-map",
+    "redo": "cvi-GeoSearch-redo",
+    "reset": "cvi-GeoSearch-reset",
+    "root": "cvi-GeoSearch",
+    "selectedLabel": "cvi-GeoSearch-label--selected",
+    "tree": "cvi-GeoSearch-tree",
+  },
+  "enableClearMapRefinement": true,
+  "enableRefine": true,
+  "enableRefineControl": true,
+  "hasMapMovedSinceLastRefine": false,
+  "isRefineOnMapMove": true,
+  "isRefinedWithMap": false,
+  "onClearClick": [Function],
+  "onRefineClick": [Function],
+  "onRefineToggle": [Function],
+  "templateProps": Object {
+    "templates": Object {
+      "HTMLMarker": "<p>Your custom HTML Marker</p>",
+      "redo": "Redo search here",
+      "reset": "Clear the map refinement",
+      "toggle": "Search as I move the map",
+    },
+    "templatesConfig": undefined,
+    "useCustomCompileOptions": Object {
+      "HTMLMarker": true,
+      "redo": true,
+      "reset": true,
+      "toggle": true,
+    },
+  },
+}
+`;
+
+exports[`GeoSearch expect to render with custom classNames 1`] = `"<div class=\\"cvi-GeoSearch custom-root\\"><div class=\\"cvi-GeoSearch-map custom-map\\"></div><div class=\\"cvi-GeoSearch-tree\\"></div></div>"`;
+
+exports[`GeoSearch expect to render with custom classNames 2`] = `
+Object {
+  "cssClasses": Object {
+    "control": "cvi-GeoSearch-control custom-control",
+    "disabledRedo": "cvi-GeoSearch-redo--disabled custom-redo-disabled",
+    "input": "cvi-GeoSearch-input custom-input",
+    "label": "cvi-GeoSearch-label custom-label",
+    "map": "cvi-GeoSearch-map custom-map",
+    "redo": "cvi-GeoSearch-redo custom-redo",
+    "reset": "cvi-GeoSearch-reset custom-reset",
+    "root": "cvi-GeoSearch custom-root",
+    "selectedLabel": "cvi-GeoSearch-label--selected custom-label-selected",
+    "tree": "cvi-GeoSearch-tree",
+  },
+  "enableClearMapRefinement": true,
+  "enableRefine": true,
+  "enableRefineControl": true,
+  "hasMapMovedSinceLastRefine": false,
+  "isRefineOnMapMove": true,
+  "isRefinedWithMap": false,
+  "onClearClick": [Function],
+  "onRefineClick": [Function],
+  "onRefineToggle": [Function],
+  "templateProps": Object {
+    "templates": Object {
+      "HTMLMarker": "<p>Your custom HTML Marker</p>",
+      "redo": "Redo search here",
+      "reset": "Clear the map refinement",
+      "toggle": "Search as I move the map",
+    },
+    "templatesConfig": undefined,
+    "useCustomCompileOptions": Object {
+      "HTMLMarker": true,
+      "redo": true,
+      "reset": true,
+      "toggle": true,
+    },
+  },
+}
+`;

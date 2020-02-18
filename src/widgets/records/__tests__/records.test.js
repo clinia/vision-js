@@ -37,7 +37,7 @@ describe('records()', () => {
     widget = records({ container, cssClasses: { root: ['root', 'cx'] } });
     widget.init({ visionInstance: { templateProps } });
     results = {
-      records: [{ first: 'hit', second: 'hit' }],
+      records: [{ first: 'record', second: 'record' }],
       perPage: 4,
       page: 2,
     };

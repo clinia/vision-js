@@ -18,8 +18,8 @@ Object {
   "records": Array [
     Object {
       "__position": 9,
-      "first": "hit",
-      "second": "hit",
+      "first": "record",
+      "second": "record",
     },
   ],
   "results": Object {
@@ -28,8 +28,8 @@ Object {
     "records": Array [
       Object {
         "__position": 9,
-        "first": "hit",
-        "second": "hit",
+        "first": "record",
+        "second": "record",
       },
     ],
   },
@@ -59,8 +59,8 @@ Object {
   "records": Array [
     Object {
       "__position": 9,
-      "first": "hit",
-      "second": "hit",
+      "first": "record",
+      "second": "record",
     },
   ],
   "results": Object {
@@ -69,8 +69,8 @@ Object {
     "records": Array [
       Object {
         "__position": 9,
-        "first": "hit",
-        "second": "hit",
+        "first": "record",
+        "second": "record",
       },
     ],
   },
@@ -100,8 +100,8 @@ Object {
   "records": Array [
     Object {
       "__position": 9,
-      "first": "hit",
-      "second": "hit",
+      "first": "record",
+      "second": "record",
       "transformed": true,
     },
   ],
@@ -111,8 +111,8 @@ Object {
     "records": Array [
       Object {
         "__position": 9,
-        "first": "hit",
-        "second": "hit",
+        "first": "record",
+        "second": "record",
         "transformed": true,
       },
     ],

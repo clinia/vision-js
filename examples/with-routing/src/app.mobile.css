@@ -230,26 +230,26 @@
     width: 1.5rem;
   }
 
-  /* Hits */
+  /* Records */
 
-  .cvi-Hits-list {
+  .cvi-Records-list {
     grid-gap: 1rem;
   }
 
-  .hit {
+  .record {
     display: flex;
   }
 
-  .hit-image-container {
+  .record-image-container {
     flex: 1;
     margin-right: 2rem;
   }
 
-  .hit-info-container {
+  .record-info-container {
     flex: 2;
   }
 
-  .hits-empty-state-image {
+  .records-empty-state-image {
     display: none;
   }
 

@@ -348,7 +348,7 @@ describe('inferInsightsPayload', () => {
       expect(payload.ids).toEqual(['3', '4']);
     });
 
-    it('should compute and inject hit positions', () => {
+    it('should compute and inject record positions', () => {
       const payload = inferInsightsPayload({
         method: 'clickedRecordIDsAfterSearch',
         results,

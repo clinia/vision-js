@@ -97,11 +97,14 @@ body {
 
 /* GeoSearch */
 
-.cvi-geosearch {
+.cvi-GeoSearch {
   width: 850px;
   height: 500px;
   margin: 0 auto;
 }
+
+.cvi-GeoSearch-map {
+  height: 100%; }
 
 .my-custom-marker {
   position: relative;

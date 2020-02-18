@@ -82,7 +82,7 @@ const renderer = ({ renderState, cssClasses, containerNode, templates }) => (
  *     container: '#records-container',
  *     templates: {
  *       empty: 'No results',
- *       item: '<strong>Hit {{objectID}}</strong>: {{{_highlightResult.name.value}}}'
+ *       item: '<strong>Record {{id}}</strong>: {{{_highlightResult.name.value}}}'
  *     },
  *     transformItems: items => items.map(item => item),
  *   })

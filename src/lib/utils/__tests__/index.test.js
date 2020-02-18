@@ -809,7 +809,7 @@ describe('utils.addAbsolutePosition', () => {
 });
 
 describe('utils.addQueryID', () => {
-  it('should add __queryID to every hit', () => {
+  it('should add __queryID to every record', () => {
     const records = utils.addQueryID([{ id: 1 }, { id: 2 }], 'theQueryID');
     expect(records[0].__queryID).toEqual('theQueryID');
     expect(records[1].__queryID).toEqual('theQueryID');

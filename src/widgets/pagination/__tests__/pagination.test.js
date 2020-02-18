@@ -55,7 +55,7 @@ describe('pagination()', () => {
     };
     widget = pagination({ container, scrollTo: false, cssClasses });
     results = {
-      records: [{ first: 'hit', second: 'hit' }],
+      records: [{ first: 'record', second: 'record' }],
       total: 200,
       perPage: 10,
       numPages: 20,
@@ -144,7 +144,7 @@ describe('pagination MaxPage', () => {
       link: 'link',
     };
     results = {
-      records: [{ first: 'hit', second: 'hit' }],
+      records: [{ first: 'record', second: 'record' }],
       total: 300,
       perPage: 10,
       numPages: 30,
