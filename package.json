@@ -1,6 +1,6 @@
 {
   "name": "@clinia/vision",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "description": "VisionJS is a JavaScript library for building performant and healthcare search experiences with Clinia.",
   "keywords": [
     "clinia",
@@ -9,9 +9,19 @@
     "widget",
     "vanilla"
   ],
-  "author": "Clinia <support@clinia.com>",
+  "author": {
+    "name": "Clinia Health, Inc.",
+    "url": "https://www.clinia.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/clinia/vision-js.git"
+  },
+  "homepage": "https://github.com/clinia/vision-js",
+  "bugs": {
+    "url": "https://github.com/clinia/vision-js/issues"
+  },
   "license": "MIT",
-  "repository": "clinia/vision-js",
   "main": "cjs/index.js",
   "module": "es/index.js",
   "jsdelivr": "dist/vision.production.min.js",
@@ -150,5 +160,6 @@
       "path": "./dist/vision.development.js",
       "maxSize": "160 kB"
     }
-  ]
+  ],
+  "types": "es/index.d.ts"
 }
